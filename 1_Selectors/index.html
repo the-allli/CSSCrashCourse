@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selector Demonstration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="antialiased">
+    <div class="container">
+      <h1>CSS Selector Demonstration</h1>
+      <!-- 1. Universal Selector -->
+      <section>
+        <h2>1. Universal Selector (`*`)</h2>
+        <p>
+          The universal selector applies to all elements on the page. In this
+          demo, it's used to reset margin/padding and set box-sizing.
+        </p>
+      </section>
+
+      <!-- 2. Element Selector -->
+      <section>
+        <h2>2. Element Selector (`p`)</h2>
+        <p>
+          This paragraph and all other paragraphs are styled using element
+          selector.
+        </p>
+      </section>
+
+      <!-- 3. Class Selector -->
+      <section>
+        <h2>3. Class Selector (`.red-text`)</h2>
+        <p class="red-text">
+          This text should be red because of the <code>.red-text</code> class.
+        </p>
+      </section>
+
+      <!-- 4. ID Selector -->
+      <section>
+        <h2>4. ID Selector (`#unique-element`)</h2>
+        <p id="unique-element">
+          This element has a unique ID and is styled with a light green
+          background and green border.
+        </p>
+      </section>
+
+      <!-- 5. Grouping Selector -->
+      <section>
+        <h2>5. Grouping Selector (`h2, h3`)</h2>
+        <h3>This is a h3 heading.</h3>
+        <p>
+          Notice how all headings (h2, h3) share common font styles defined by
+          the grouping selector.
+        </p>
+      </section>
+
+      <!-- 6. Combinator Selectors -->
+      <section class="combinator-example">
+        <h2>6. Combinator Selectors</h2>
+        <!-- Descendant Selector -->
+        <section class="descendant-selector">
+          <h3>Descendant Selector (`div p`)</h3>
+          <div>
+            <p>This paragraph is a descendant of a div.</p>
+            <span>
+              <p>
+                This paragraph is also a descendant of a div (nested deeper).
+              </p>
+            </span>
+          </div>
+        </section>
+        <!-- Descendant Selector with Specificity -->
+        <section class="descendant-selector-specificity">
+          <h3>Descendant Selector with Specificity (`div i.beta`)</h3>
+          <div>
+            <p>
+              This paragraph contains an <i class="beta">italic beta text</i>.
+            </p>
+            <p>
+              This paragraph contains another
+              <i class="beta" id="beta-id">beta text with an ID</i>,
+              demonstrating ID specificity.
+            </p>
+          </div>
+        </section>
+        <!-- Child Selector -->
+        <section class="child-selector">
+          <h3>Child Selector (`div > p`)</h3>
+          <div>
+            <p>
+              This is a direct child paragraph of the div (has a left border and
+              background).
+            </p>
+            <span>
+              <p>
+                This is NOT a direct child of the div (no left border and
+                background).
+              </p>
+            </span>
+          </div>
+        </section>
+        <!-- Adjacent Sibling Selector -->
+        <section class="adjacent-sibling">
+          <h3>Adjacent Sibling Selector (`h4 + p`)</h3>
+          <h4>Heading for Adjacent Sibling</h4>
+          <p>
+            This paragraph immediately follows the H3 (should have top border).
+          </p>
+        </section>
+        <!-- General Sibling Selector -->
+        <section class="general-sibling">
+          <h3>General Sibling Selector (`h4 ~ p`)</h3>
+          <h4>Heading for General Sibling</h4>
+          <p>
+            This paragraph is a sibling of the H3 and appears after it (should
+            be italic and blue).
+          </p>
+          <div>
+            <p>This is not a sibling of the H3.</p>
+          </div>
+          <p>
+            This is also a sibling of the H3 and appears after it (should also
+            be italic and blue).
+          </p>
+        </section>
+      </section>
+
+      <!-- 7. Pseudo-Element Selector -->
+      <section class="pseudo-element-example">
+        <h2>7. Pseudo-element Selectors</h2>
+        <p>
+          This is a sample paragraph to demonstrate <code>::first-line</code>,
+          <code>::first-letter</code>, <code>::before</code>,
+          <code>::after</code>,<code>::selection</code>. <br />Try selecting
+          some of this text.
+        </p>
+        <p>List item markers are styled using <code>::marker</code>.</p>
+        <ul>
+          <li>First item</li>
+          <li>Second item</li>
+          <li>Third item</li>
+        </ul>
+        <section>
+          <h3>Input Pseudo-elements</h3>
+          <label for="nameInput">Name (Placeholder):</label>
+          <input type="text" id="nameInput" placeholder="Enter your name" />
+        </section>
+        <section>
+          <h3>File Selector Button (`::file-selector-button`)</h3>
+          <input type="file" id="fileInput" />
+        </section>
+      </section>
+
+      <!-- 8. Structural Pseudo-classes -->
+      <section>
+        <h2>8. Structural Pseudo-classes</h2>
+        <!-- :first-child, :last-child, :nth-child(), :nth-last-child() -->
+        <section>
+          <h3>
+            :first-child, :last-child, :nth-child(odd), :nth-last-child(2)
+          </h3>
+          <div class="structural-container">
+            <p>Paragraph 1 (first-child, odd)</p>
+            <p>Paragraph 2 (even)</p>
+            <p>Paragraph 3 (odd)</p>
+            <p>Paragraph 4 (even, second to last)</p>
+            <p>Paragraph 5 (last-child, odd)</p>
+          </div>
+        </section>
+        <!-- :first-of-type, :last-of-type -->
+        <section>
+          <h3>:first-of-type,:last-of-type</h3>
+          <div class="type-container">
+            <span>Span 1 (first-of-type)</span>
+            <span>Span 2</span>
+            <span>Span 3 (last-of-type)</span>
+          </div>
+        </section>
+        <!-- :nth-of-type(), :nth-last-of-type() -->
+        <section>
+          <h3>:nth-of-type(3n), :nth-last-of-type(3)</h3>
+          <div class="nth-of-type-container">
+            <div>Div 1</div>
+            <div>Div 2</div>
+            <div>Div 3 (nth-of-type(3n))</div>
+            <div>Div 4</div>
+            <div>Div 5</div>
+            <div>Div 6 (nth-of-type(3n))</div>
+            <div>Div 7 (nth-last-of-type(3))</div>
+            <div>Div 8</div>
+            <div>Div 9 (nth-of-type(3n))</div>
+          </div>
+        </section>
+        <!-- :only-child -->
+        <section>
+          <h3>:only-child</h3>
+          <div class="only-child-container">
+            <p>This is the only paragraph inside its parent div (styled).</p>
+          </div>
+          <div class="only-child-container">
+            <p>First paragraph (not styled by :only-child).</p>
+            <p>Second paragraph (not styled by :only-child).</p>
+          </div>
+        </section>
+        <!-- :only-of-type -->
+        <section>
+          <h3>:only-of-type</h3>
+          <div class="only-of-type-container">
+            <div>
+              This is the only div of its type inside its parent (styled).
+            </div>
+          </div>
+          <div class="only-of-type-container">
+            <div>First div (not styled by :only-of-type).</div>
+            <div>Second div (not styled by :only-of-type).</div>
+          </div>
+        </section>
+        <!-- :root -->
+        <section>
+          <h3>:root</h3>
+          <p class="root-example">
+            This text uses a CSS variable defined on <code>:root</code>.
+          </p>
+        </section>
+        <!-- :empty -->
+        <section>
+          <h3>:empty</h3>
+          <div class="empty-container">
+            <div></div>
+            <div>Some content here.</div>
+          </div>
+        </section>
+      </section>
+
+      <!-- 9. User Interface Pseudo-classes -->
+      <section>
+        <h2>9. User Interface Pseudo-classes</h2>
+
+        <section>
+          <h3>
+            Input States (`:enabled`, `:disabled`, `:focus`, `:read-only`,
+            `:read-write`)
+          </h3>
+          <label for="enabledInput">Enabled Input:</label>
+          <input type="text" id="enabledInput" value="I am enabled." />
+
+          <label for="disabledInput">Disabled Input:</label>
+          <input
+            type="text"
+            id="disabledInput"
+            value="I am disabled."
+            disabled
+          />
+
+          <label for="readonlyInput">Read-Only Input:</label>
+          <input
+            type="text"
+            id="readonlyInput"
+            value="I am read-only."
+            readonly
+          />
+
+          <label for="readwriteInput">Read-Write Input:</label>
+          <input type="text" id="readwriteInput" value="I am read-write." />
+
+          <h3>Checkbox (`:checked`)</h3>
+          <input type="checkbox" id="checkboxDemo" />
+          <label for="checkboxDemo"
+            >Check me to make this label bold and green!</label
+          >
+          <h3>Focus-Within (`:focus-within`)</h3>
+          <div class="focus-within-group">
+            <p>
+              This parent div highlights when any of its children are focused.
+            </p>
+            <input type="text" placeholder="Focus me" />
+            <button>Click me</button>
+          </div>
+        </section>
+
+        <section>
+          <h3>
+            Validation (`:valid`, `:invalid`, `:required`, `:optional`,
+            `:in-range`, `:out-of-range`)
+          </h3>
+          <form>
+            <p><strong>Required Field:</strong></p>
+            <input
+              type="email"
+              placeholder="Enter valid email (required)"
+              required
+            />
+            <p><strong>Optional Field:</strong></p>
+            <input type="text" placeholder="Enter optional text" />
+            <p><strong>Number Range (10-20):</strong></p>
+            <input
+              type="number"
+              min="10"
+              max="20"
+              value="15"
+              placeholder="Enter number (10-20)"
+            />
+            <input
+              type="number"
+              min="10"
+              max="20"
+              value="5"
+              placeholder="Enter number (out of range)"
+            />
+            <input
+              type="number"
+              min="10"
+              max="20"
+              value="25"
+              placeholder="Enter number (out of range)"
+            />
+
+            <p><strong>Default Button (`:default`):</strong></p>
+            <button type="submit">Submit (Default)</button>
+            <button type="button">Regular Button</button>
+          </form>
+        </section>
+        <section>
+          <h3>Link States</h3>
+          <p>Hover over, click, and visit these links:</p>
+          <p>
+            <a href="#target-section"
+              >Go to Target Section (Hover/Active/Visited)</a
+            >
+          </p>
+          <p>
+            <a href="https://example.com" target="_blank"
+              >External Link (Hover/Active/Visited)</a
+            >
+          </p>
+          <h3>Target (`:target`)</h3>
+          <p>
+            Click the link above "Go to Target Section" to highlight the target
+            section below.
+          </p>
+          <div id="target-section">
+            <h3>This is the Target Section!</h3>
+            <p>
+              This section gets highlighted when its ID matches the URL hash
+              (e.g., <code>#target-section</code>).
+            </p>
+          </div>
+        </section>
+
+        <h3>Fullscreen (`:fullscreen`)</h3>
+        <p>
+          Click the button to enter fullscreen mode for the box below (then
+          press Esc to exit).
+        </p>
+        <button
+          onclick="document.getElementById('fullscreenBox').requestFullscreen()"
+        >
+          Enter Fullscreen for Box
+        </button>
+        <div
+          id="fullscreenBox"
+          style="
+            background-color: #a7f3d0;
+            padding: 20px;
+            margin-top: 10px;
+            text-align: center;
+            border-radius: 8px;
+          "
+        >
+          <p>I can go fullscreen!</p>
+        </div>
+      </section>
+
+      <!-- 10. Attribute Selectors -->
+      <section class="attribute-example">
+        <h2>10. Attribute Selectors</h2>
+
+        <h3>[attribute] and [attribute="value"]</h3>
+        <input type="text" value="Text input (styled by [type=text])" />
+        <input type="checkbox" checked id="checkboxAttr" />
+        <label for="checkboxAttr"
+          >Checked checkbox (styled by [type=checkbox]:checked)</label
+        >
+        <input type="radio" name="radioAttr" /> Radio (not checked)
+
+        <h3>[attribute][attribute] (Multiple Attributes)</h3>
+        <input type="text" placeholder="Text input with placeholder (styled)" />
+        <input type="text" value="Text input without placeholder" />
+
+        <h3>[attribute="value" i] (Case-Insensitive - conceptual)</h3>
+        <input
+          type="text"
+          placeholder="This input is type='text' (demonstrates 'i' flag, usually for value)"
+        />
+
+        <h3>
+          String Pattern Matching: <code>^=</code> (Starts With),
+          <code>$=</code> (Ends With), <code>*=</code> (Contains)
+        </h3>
+        <p>
+          <a href="https://www.google.com"
+            >HTTPS Google (starts with https://)</a
+          >
+        </p>
+        <p><a href="http://www.yahoo.com">HTTP Yahoo</a></p>
+        <p>
+          <img
+            src="https://placehold.co/100x100/A0AEC0/ffffff?text=Image.png"
+            alt="PNG Image"
+          />
+        </p>
+        <p>
+          <img
+            src="https://placehold.co/100x100/CBD5E0/ffffff?text=Image.jpg"
+            alt="JPG Image"
+          />
+        </p>
+
+        <p>
+          <span class="icon-home">Home Icon</span>
+          <span class="nav-icon">Nav Icon</span>
+        </p>
+        <p class="message warning">
+          This message has a warning class (contains 'warning' word).
+        </p>
+
+        <h3>Hyphenated Word (`|=`)</h3>
+        <p lang="en">This paragraph is in English (lang="en").</p>
+        <p lang="en-US">This paragraph is in US English (lang="en-US").</p>
+        <p lang="fr">Ceci est en français.</p>
+      </section>
+
+      <!-- 11. Tree-Structural Pseudo-classes: :has() -->
+      <section>
+        <h2>11. Tree-Structural Pseudo-classes: <code>:has()</code></h2>
+        <p>
+          A <code>.card</code> will change style if it contains specific
+          elements.
+        </p>
+        <div class="card">
+          <h3>Card with H3</h3>
+          <p>
+            This card has an h3 heading, so it should have a light blue
+            background and blue border.
+          </p>
+        </div>
+        <div class="card">
+          <p>This card does NOT have an h3.</p>
+        </div>
+        <div class="card">
+          <p class="normal">This card has a normal paragraph.</p>
+          <p class="warning">
+            This card has a warning paragraph, so it should have a light red
+            background and red border.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Card with H3 and Warning</h3>
+          <p class="warning">
+            This card has both an H3 and a warning paragraph.
+          </p>
+        </div>
+      </section>
+
+      <!-- 12. Negation Pseudo-class -->
+      <section class="negation-example">
+        <h2>12. Negation Pseudo-class (`:not()`)</h2>
+        <p>
+          Divs without the <code>.highlight</code> class are styled differently.
+        </p>
+        <div>This div does NOT have the highlight class.</div>
+        <div class="highlight">This div HAS the highlight class.</div>
+        <div>This div also does NOT have the highlight class.</div>
+      </section>
+    </div>
+  </body>
+</html>

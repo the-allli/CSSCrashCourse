@@ -1,0 +1,591 @@
+/*
+      CSS stands for Cascading Style Sheets, and it is used to style HTML documents.
+      CSS Syntax:
+      - Selector: The HTML element you want to style.
+      - Property: The style attribute you want to change.
+      - Value: The value of the property you want to apply.
+      Example:
+      selector {
+          property: value;
+      }
+*/
+
+/* Types of selectors: */
+/* 1. Universal Selector */
+/* 2. Element Selector */
+/* 3. Class Selector */
+/* 4. ID Selector */
+/* 5. Grouping Selector */
+/* 6. Combinator Selectors */
+/* 7. Pseudo-element Selector */
+/* 8. Structural Pseudo-classes Selectors: */
+/* 9. User Interface Pseudo-classes Selectors: */
+/* 10. Attribute Selectors */
+/* 11. Tree-Structural Pseudo-class Selector: */
+/* 12. Negation Pseudo-class Selector*/
+
+
+/* General body styling */
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #8b5cf6;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    color: #2c5282;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #2d3748;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #f7fafc;
+}
+
+section p {
+    margin-bottom: 10px;
+}
+
+/* --- CSS for demonstration (from user's input) --- */
+
+/* 1. Universal Selector */
+/* This selects all HTML elements on a page. It's often used for global resets like removing default margins and padding. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 2. Element Selector */
+/* This targets all instances of a specific HTML element. */
+p {
+    font-size: 1rem;
+    color: #4a5568;
+}
+
+
+/* 3. Class Selector */
+/* This targets elements that have a specific class attribute. Classes can be applied to multiple elements. */
+.red-text {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+
+/* 4. ID Selector */
+/* This targets a single, unique HTML element with a specific id attribute. IDs should be unique per page. */
+#unique-element {
+    background-color: #d1fae5;
+    padding: 15px;
+    border: 1px solid #34d399;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+/* 5. Grouping Selector */
+/* This applies the same styles to multiple selectors by separating them with commas. */
+h2,
+h3 {
+    margin-bottom: 0.5em;
+}
+
+
+/* 6. Combinator Selectors */
+/* Descendant Selector */
+/* Selects all p elements that are anywhere inside a div element. */
+.descendant-selector div p {
+    background-color: #feebcf;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+/* Descendant Selector with Specificity */
+.descendant-selector-specificity div i.beta {
+    color: #d97706;
+    font-weight: bold;
+    background-color: #feebcf;
+}
+
+/* Descendant Selector with Specificity and ID */
+.descendant-selector-specificity div i#beta-id {
+    color: #c05621;
+    font-weight: bolder;
+    border-bottom: 1px dashed;
+    background-color: #feebcf;
+}
+
+/* Child Selector */
+/* Selects all p elements that are direct children of a div element. */
+.child-selector div>p {
+    border-left: 3px solid #f6ad55;
+    padding-left: 8px;
+    background-color: #feebcf;
+}
+
+/* Adjacent Sibling Selector */
+/* Selects a p element that immediately follows an h4 element and is at the same level. */
+.adjacent-sibling h4+p {
+    padding-top: 10px;
+    border-top: 1px dashed #a0aec0;
+    background-color: #feebcf;
+}
+
+/* General Sibling Selector */
+/* Selects all p elements that are siblings of an h4 element and appear after it. */
+.general-sibling h4~p {
+    font-style: italic;
+    color: #1f59af;
+    background-color: #feebcf;
+}
+
+
+/* 7. Pseudo-element Selector */
+/* Selects the first line of each <p> element */
+.pseudo-element-example p::first-line {
+    font-weight: bold;
+    color: #00a3c4;
+}
+
+/* Selects the first letter of each <h3> element */
+.pseudo-element-example h3::first-letter {
+    font-size: 2em;
+    color: #007B8A;
+    float: left;
+    line-height: 1;
+    margin-right: 5px;
+}
+
+/* Inserts content before each <p> element */
+.pseudo-element-example p::before {
+    content: "💡 ";
+}
+
+/* Inserts content after each <p> element */
+.pseudo-element-example p::after {
+    content: " (End of paragraph) ";
+    color: #7e8f1c;
+    font-size: 0.8em;
+}
+
+/* Styles the portion of <p> text selected by the user */
+.pseudo-element-example p::selection {
+    background-color: #08dce4;
+    color: #2d3748;
+}
+
+/* Styles the placeholder text in input fields */
+input::placeholder {
+    color: #c5290e;
+    font-style: italic;
+}
+
+ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+/* Styles the marker of a list item */
+li::marker {
+    color: #48bb78;
+    font-size: 1.2em;
+}
+
+/* ::file-selector-button (for file inputs) */
+input[type="file"]::file-selector-button {
+    background-color: #4299e1;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #3182ce;
+}
+
+
+/* 8. Structural Pseudo-classes: */
+.structural-container p {
+    background-color: #ebf4ff;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-left: 2px solid #63b3ed;
+}
+
+/* :first-child */
+.structural-container p:first-child {
+    font-weight: bold;
+    color: #2b6cb0;
+}
+
+/* :last-child */
+.structural-container p:last-child {
+    text-decoration: underline;
+    color: #2b6cb0;
+    font-weight: bold;
+}
+
+/* :nth-child(n) - every odd paragraph */
+.structural-container p:nth-child(odd) {
+    background-color: #ceac8c;
+}
+
+/* :nth-last-child(n) - the second to last paragraph */
+.structural-container p:nth-last-child(2) {
+    border-right: 3px solid #9f7aea;
+}
+
+.type-container span {
+    background-color: #fee2e2;
+    padding: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+/* :first-of-type - first span element */
+.type-container span:first-of-type {
+    font-style: italic;
+    color: #c53030;
+}
+
+/* :last-of-type - last span element */
+.type-container span:last-of-type {
+    border-bottom: 2px dashed #c53030;
+}
+
+.nth-of-type-container div {
+    background-color: #f0fff4;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-left: 2px solid #68d391;
+}
+
+/* :nth-of-type(n) - every third div of its type */
+.nth-of-type-container div:nth-of-type(3n) {
+    background-color: #c6f6d5;
+    color: #2f855a;
+}
+
+/* :nth-last-of-type(n) - the third div of its type, counting from the end */
+.nth-of-type-container div:nth-last-of-type(3) {
+    border-right: 3px solid #48bb78;
+}
+
+.only-child-container p {
+    background-color: #fffbeb;
+    padding: 10px;
+    border: 1px solid #ecc94b;
+}
+
+/* :only-child */
+.only-child-container p:only-child {
+    font-weight: bold;
+    color: #b7791f;
+}
+
+.only-of-type-container div {
+    background-color: #f0f4f8;
+    padding: 10px;
+    border: 1px solid #a0aec0;
+}
+
+/* :only-of-type */
+.only-of-type-container div:only-of-type {
+    text-align: center;
+    font-style: italic;
+}
+
+/* :root */
+:root {
+    --primary-color: #4299e1;
+}
+
+.root-example {
+    color: var(--primary-color);
+}
+
+.empty-container div {
+    border: 1px dashed #cbd5e0;
+    min-height: 20px;
+    margin-bottom: 5px;
+    background-color: #f7fafc;
+}
+
+/* :empty */
+.empty-container div:empty {
+    background-color: #fed7d7;
+    border-color: #e53e3e;
+    height: 15px;
+}
+
+
+/* 9. User Interface Pseudo-classes: */
+/* :hover */
+a:hover {
+    color: #4299e1;
+    text-decoration: underline;
+}
+
+/* :active */
+a:active {
+    color: #2c5282;
+}
+
+/* :visited */
+a:visited {
+    color: #805ad5;
+}
+
+/* Input common styles */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea {
+    border: 1px solid #cbd5e0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* :enabled */
+input:enabled {
+    background-color: white;
+}
+
+/* :disabled */
+input:disabled {
+    background-color: #edf2f7;
+    cursor: not-allowed;
+    color: #a0aec0;
+}
+
+/* :checked */
+input[type="checkbox"]:checked+label {
+    font-weight: bold;
+    color: #48bb78;
+}
+
+/* :focus */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* :target */
+#target-section:target {
+    background-color: #fefce8;
+    border: 2px solid #f6e05e;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* :read-only */
+input[readonly] {
+    background-color: #e2e8f0;
+    cursor: default;
+}
+
+/* :read-write */
+input:read-write {
+    background-color: #ffffff;
+}
+
+/* :default */
+form button:default {
+    border: 2px solid #63b3ed;
+    font-weight: bold;
+}
+
+/* :valid */
+input:valid {
+    border-color: #48bb78;
+}
+
+/* :invalid */
+input:invalid {
+    border-color: #e53e3e;
+}
+
+/* :in-range */
+input[type="number"]:in-range {
+    background-color: #f0fff4;
+}
+
+/* :out-of-range */
+input[type="number"]:out-of-range {
+    background-color: #fed7d7;
+}
+
+/* :required */
+input:required {
+    border-left: 4px solid #f6ad55;
+}
+
+/* :optional */
+input:optional {
+    border-right: 4px solid #a0aec0;
+}
+
+/* :fullscreen (Requires user interaction to enter fullscreen) */
+.fullscreen-target:fullscreen {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+/* :focus-within */
+.focus-within-group {
+    border: 2px solid transparent;
+    padding: 0px;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.focus-within-group:focus-within {
+    border-color: #9f7aea;
+    box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.3);
+}
+
+/* :focus-visible (Hard to demonstrate purely with CSS, depends on browser heuristics) */
+button:focus-visible {
+    outline: 2px solid #3182ce;
+    outline-offset: 2px;
+}
+
+
+/* 10. Attribute Selectors */
+.attribute-example input[type="text"] {
+    border-color: #68d391;
+}
+
+/* Attribute Selector with Value */
+/* Selects elements where a specific attribute has a certain value. */
+.attribute-example input[type="checkbox"]:checked {
+    outline: 2px solid #48bb78;
+}
+
+/* Attribute Selector with Multiple Values */
+/* Combines multiple attribute selectors. */
+.attribute-example input[type="text"][placeholder] {
+    background-color: #7fc7d1;
+}
+
+/* Attribute Selector with Case Insensitivity */
+/* Uses the i flag to make the attribute value match case-insensitive. */
+.attribute-example input[type="text" i] {
+    font-style: normal;
+}
+
+/* Attribute Selector with Specific String Patterns */
+/* Selects elements whose attribute value begins with a specific string. */
+.attribute-example a[href^="https://"] {
+    color: #3182ce;
+    font-weight: bold;
+}
+
+/* Selects elements whose attribute value ends with a specific string. */
+.attribute-example img[src$=".png"] {
+    border: 3px solid #8b5cf6;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* Selects elements whose attribute value contains a specific string anywhere within it. */
+.attribute-example [class*="icon-"] {
+    background-color: #fbd38d;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Selects elements whose attribute value contains a specific word in a space-separated list. */
+.attribute-example [class~="warning"] {
+    border: 2px dashed #e53e3e;
+    padding: 8px;
+    color: #c53030;
+}
+
+/* (Starts with and is followed by a hyphen or is the exact value): Often used for language attributes (e.g., lang="en" or lang="en-US"). */
+.attribute-example [lang|="en"] {
+    background-color: #bee3f8;
+}
+
+/* 11. Tree-Structural Pseudo-classes: */
+.card {
+    border: 1px solid #d6bcfa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f7fafc;
+}
+
+/* :has(selector) pseudo-class that allows you to select an element based on whether it contains an element matching the provided selector. */
+.card:has(h3) {
+    background-color: #ebf8ff;
+    border-color: #63b3ed;
+}
+
+.card:has(p.warning) {
+    background-color: #fff5f5;
+    border-color: #fc8181;
+}
+
+/* 12. Negation Pseudo-class */
+.negation-example div {
+    border: 1px solid #cbd5e0;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.negation-example div:not(.highlight) {
+    background-color: #f0fff4;
+}
+
+.negation-example .highlight {
+    background-color: #fffbeb;
+    font-weight: bold;
+}
