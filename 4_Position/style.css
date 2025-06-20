@@ -1,0 +1,141 @@
+.static {
+    background-color: lightgray;
+    margin: 20px auto;
+}
+
+.top,
+.bottom {
+    height: 100px;
+    width: 100px;
+}
+
+.top {
+    background-color: darkgreen;
+}
+
+.bottom {
+    background-color: darkgoldenrod;
+}
+
+.relative {
+    background-color: lightpink;
+    margin: 20px auto;
+    border: 3px solid black;
+}
+
+.relative-itme1,
+.relative-itme2 {
+    width: 200px;
+    height: 200px;
+}
+
+.relative-itme1 {
+    background-color: rgb(133, 17, 17);
+    position: relative;
+    left: 30px;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+}
+
+.relative-itme2 {
+    background-color: lightblue;
+    position: relative;
+}
+
+.absolute {
+    background-color: rgb(96, 238, 115);
+    margin: 20px auto;
+    position: relative;
+    height: 318px;
+}
+
+.absolute-item1,
+.absolute-item2,
+.absolute-item3,
+.absolute-item4 {
+    width: 100px;
+    height: 100px;
+}
+
+.absolute-item1 {
+    background-color: rgb(133, 17, 17);
+    position: absolute;
+    left: 0;
+}
+
+.absolute-item2 {
+    background-color: lightblue;
+    position: absolute;
+    right: 0;
+
+}
+
+.absolute-item3 {
+    background-color: darkcyan;
+    position: absolute;
+    bottom: 0;
+}
+
+.absolute-item4 {
+    background-color: brown;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.fixed {
+    background-color: rgb(188, 199, 137);
+    margin: 20px auto;
+}
+
+.fixed-elem {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(42, 24, 126);
+    /* position: fixed;
+    top: 20px; */
+}
+
+.sticky {
+    background-color: lightcyan;
+    margin: 20px auto;
+    height: 250px;
+    overflow: auto;
+}
+
+dt {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 1em 0;
+}
+
+.z {
+    background-color: rgb(137, 6, 163);
+    margin: 20px auto;
+}
+
+.z-item1,
+.z-item2 {
+    width: 100px;
+    height: 100px;
+}
+
+.z-item1 {
+    background-color: aqua;
+    position: relative;
+    left: 30px;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    z-index: 1;
+}
+
+.z-item2 {
+    background-color: coral;
+    position: relative;
+}
