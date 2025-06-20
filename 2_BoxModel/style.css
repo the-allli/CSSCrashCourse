@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    min-width: 100px;
+    width: 300px;
+    max-width: 500px;
+    min-height: 100px;
+    height: 200px;
+    max-height: 500px;
+    background-color: lightblue;
+    border: 5px solid blue;
+    padding: 80px;
+    margin: 200px auto;
+    text-align: center;
+    outline: 5px solid rgb(226, 58, 6);
+    outline-offset: 5px;
+}
+
+h2 {
+    background-color: lightcoral;
+}
