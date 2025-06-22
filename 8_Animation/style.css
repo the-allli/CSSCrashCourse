@@ -1,0 +1,609 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #222;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+/* 1. Transition Animation (Button) */
+.transition-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    background: #4f8cff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.4s, transform 0.3s;
+    cursor: pointer;
+}
+
+.transition-btn:hover {
+    background: #1e5ed6;
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* 2. Keyframes Animation (Bouncing Ball) */
+.bouncing-ball {
+    width: 40px;
+    height: 40px;
+    background: #ff6f61;
+    border-radius: 50%;
+    margin: 1rem auto;
+    animation: bounce 1s infinite alternate cubic-bezier(.5, 0.05, 1, .5);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    70% {
+        transform: translateY(120px);
+    }
+
+    100% {
+        transform: translateY(100px) scaleY(1.2);
+    }
+}
+
+/* 3. Hover Animation (Card Flip) */
+.flip-card {
+    background-color: transparent;
+    width: 120px;
+    height: 80px;
+    perspective: 600px;
+    margin: 1rem auto;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+
+.flip-card-front {
+    background: #ffd166;
+    color: #333;
+}
+
+.flip-card-back {
+    background: #06d6a0;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+/* 4. Text Animation (Typing Effect) */
+.typing-demo {
+    width: 22ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #4f8cff;
+    font-size: 1.3rem;
+    animation: typing 2.5s steps(22), blink 0.6s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 22ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* 5. Loader Animation (Spinning Circle) */
+.loader {
+    border: 6px solid #eee;
+    border-top: 6px solid #4f8cff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 1s linear infinite;
+    margin: 1rem auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 6. Fade In Animation */
+.fade-in-box {
+    opacity: 0;
+    background: #e0e0e0;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* 7. Slide In Animation */
+.slide-in-box {
+    opacity: 0;
+    transform: translateX(-100px);
+    background: #b388ff;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    animation: slideIn 1.2s 0.5s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 8. Color Change Animation */
+.color-change-box {
+    background: #ffb4a2;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    color: #333;
+    animation: colorChange 2s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        background: #ffb4a2;
+    }
+
+    50% {
+        background: #90e0ef;
+        color: #fff;
+    }
+
+    100% {
+        background: #ffb4a2;
+    }
+}
+
+/* 9. Pulse Animation */
+.pulse-box {
+    width: 40px;
+    height: 40px;
+    background: #06d6a0;
+    border-radius: 50%;
+    margin: 1rem auto;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 10. Scale Animation */
+.scale-box {
+    width: 60px;
+    height: 60px;
+    background: #4f8cff;
+    border-radius: 12px;
+    margin: 1rem auto;
+    animation: scaleAnim 1.5s infinite alternate;
+}
+
+@keyframes scaleAnim {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1.4) rotate(20deg);
+    }
+}
+
+/* 11. Growing/Shrinking Bars */
+.bars {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 1rem 0;
+}
+
+.bar {
+    width: 12px;
+    height: 40px;
+    background: #4f8cff;
+    animation: growShrink 1.2s infinite ease-in-out alternate;
+}
+
+.bar:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.bar:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.bar:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes growShrink {
+    0% {
+        height: 40px;
+        background-color: #4f8cff;
+    }
+
+    50% {
+        height: 80px;
+        background-color: #1e5ed6;
+    }
+
+    100% {
+        height: 40px;
+        background-color: #4f8cff;
+    }
+}
+
+/* 12. Twisting Squares */
+.twisting-squares {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 1rem 0;
+}
+
+.square {
+    background: #06d6a0;
+    animation: twist 4s linear infinite;
+    border-radius: 6px;
+}
+
+.square.small {
+    width: 30px;
+    height: 30px;
+    animation-duration: 3s;
+}
+
+.square.medium {
+    width: 50px;
+    height: 50px;
+    animation-duration: 4s;
+}
+
+.square.large {
+    width: 70px;
+    height: 70px;
+    animation-duration: 5s;
+}
+
+@keyframes twist {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 13. Laser Tag Loader */
+.laser-tag-loader {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 1rem auto;
+    background: #222;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.laser-tag-loader::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #4f8cff, transparent);
+    animation: laserMove 2s linear infinite;
+}
+
+@keyframes laserMove {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 14. Dancing Shadow Text */
+.dancing-shadow {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    text-shadow:
+        2px 2px 0 #4f8cff,
+        -2px -2px 0 #06d6a0;
+    animation: shadowDance 3s ease-in-out infinite alternate;
+}
+
+@keyframes shadowDance {
+    0% {
+        text-shadow:
+            2px 2px 0 #4f8cff,
+            -2px -2px 0 #06d6a0;
+    }
+
+    50% {
+        text-shadow:
+            -2px -2px 0 #4f8cff,
+            2px 2px 0 #06d6a0;
+    }
+
+    100% {
+        text-shadow:
+            2px 2px 0 #4f8cff,
+            -2px -2px 0 #06d6a0;
+    }
+}
+
+/* 15. Melting Text */
+.melting-text {
+    font-size: 2rem;
+    color: #ff6f61;
+    position: relative;
+    animation: melt 3s ease-in-out infinite;
+}
+
+.melting-text::before,
+.melting-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    filter: blur(4px);
+    color: #ff6f61;
+    animation: drip 3s ease-in-out infinite;
+}
+
+.melting-text::before {
+    top: 0;
+    animation-delay: 0s;
+}
+
+.melting-text::after {
+    top: 5px;
+    animation-delay: 1.5s;
+}
+
+@keyframes melt {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes drip {
+
+    0%,
+    100% {
+        transform: translateY(0) scaleY(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(10px) scaleY(1.2);
+        opacity: 0;
+    }
+}
+
+/* 16. Matrix Text Effect */
+.matrix-text {
+    font-family: monospace;
+    font-size: 2.5rem;
+    color: #0f0;
+    background: black;
+    padding: 0.5rem 1rem;
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    margin: 1rem auto;
+}
+
+.matrix-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 0, 0.2) 3px,
+            transparent 4px);
+    animation: rain 1.5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+/* 17. Text Masking/Shimmer */
+.shimmer-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    background: linear-gradient(90deg,
+            #f0f0f0 25%,
+            #4f8cff 50%,
+            #f0f0f0 75%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shimmer 2.5s infinite;
+    margin: 1rem 0;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* 18. 3D Spinning Text */
+.spinning-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #06d6a0;
+    transform-style: preserve-3d;
+    animation: spin3d 4s linear infinite;
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+@keyframes spin3d {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* 19. Rainbow Spotlight Text */
+.rainbow-spotlight {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowMove 4s linear infinite;
+    margin: 1rem 0;
+}
+
+@keyframes rainbowMove {
+    0% {
+        background-position: 0% 0;
+    }
+
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+/* 20. Explosive Letter Burst on Hover */
+.explosive-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4f8cff;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.explosive-text:hover {
+    transform: scale(1.1);
+}
+
+.explosive-text:hover::before,
+.explosive-text:hover::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #4f8cff 0%, transparent 70%);
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: burst 0.6s forwards;
+    pointer-events: none;
+}
+
+.explosive-text:hover::after {
+    animation-delay: 0.3s;
+}
+
+@keyframes burst {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
