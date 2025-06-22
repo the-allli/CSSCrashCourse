@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+a {
+    cursor: pointer;
+    outline: olivedrab solid 2px;
+    margin: 10px;
+}
+
+a:link {
+    color: #6900ff;
+}
+
+a:focus,
+a:hover {
+    text-decoration: none;
+    background: #3d7415;
+}
+
+a:visited {
+    color: #a5c300;
+}
+
+a:active {
+    color: #0890a8;
+}
+
+a[href^="https"]::after {
+    content: "";
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0.25em;
+    background-size: 100%;
+    background-image: url("https://img.icons8.com/?size=100&id=741&format=png&color=000000");
+}
+
+.container {
+    display: flex;
+    gap: 0.625%;
+}
+
+.container a {
+    flex: 1;
+    text-decoration: none;
+    outline-color: transparent;
+    text-align: center;
+    line-height: 3;
+    color: black;
+}
+
+.container a:link,
+.container a:visited,
+.container a:focus {
+    background: palegoldenrod;
+    color: black;
+}
+
+.container a:hover {
+    background: orange;
+}
+
+.container a:active {
+    background: darkred;
+    color: white;
+}
