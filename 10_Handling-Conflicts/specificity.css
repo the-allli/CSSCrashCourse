@@ -1,0 +1,11 @@
+#specificity {
+    color: green;
+}
+
+.main-heading {
+    color: red;
+}
+
+h5 {
+    color: blue;
+}

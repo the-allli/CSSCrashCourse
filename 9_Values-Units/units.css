@@ -1,0 +1,100 @@
+/*
+List of absolute units in CSS:
+px: This is the most common absolute unit for screen displays. While it's called "absolute," a CSS pixel doesn' t always map to a single physical screen pixel, especially on high-DPI (Retina) displays. It's a standardized unit for web rendering.
+cm: A physical unit, typically 1cm=96px/2.54. Primarily used for print media stylesheets.
+mm: A physical unit, 1mm=1/10th of a centimeter. Primarily used for print media stylesheets.
+in: A physical unit, 1in=2.54cm=96px. Primarily used for print media stylesheets.
+pt: A physical unit, 1pt=1/72 of an inch. Commonly used in typography, especially for print.
+pc: A physical unit, 1pc=12 points. Also a typographical unit, mainly for print.
+*/
+
+/*
+List of relative units in CSS:
+% : Relative to the parent element's corresponding property. For example, width: 50%; means 50% of the parent' s width.
+em: Relative to the font-size of the element itself. If used for font-size, it's relative to the font-size of the parent element. This can lead to compounding effects in nested elements.
+rem: Relative to the font-size of the root <html>element. This is often preferred over em for consistent scaling across an entire document, as it avoids the compounding issues of em.
+vw: Relative to 1% of the viewport's width. So, 100vw is the full width of the browser window.
+vh: Relative to 1% of the viewport's height. So, 100vh is the full height of the browser window.
+vmin: Relative to 1% of the smaller dimension of the viewport (either width or height). For example, if the viewport is 800px wide and 600px tall, 1vmin would be 6px.
+vmax : Relative to 1% of the larger dimension of the viewport (either width or height). For example, if the viewport is 800px wide and 600px tall, 1vmax would be 8px.
+ch: Relative to the advance measure (width) of the "0"(zero) character of the element's current font. Often used for setting readable line lengths in text.
+ex: Relative to the x-height of the current font (typically the height of the lowercase 'x'). Less commonly used than em or rem.
+*/
+
+/* Absolute Units */
+.absolute-px {
+    width: 96px;
+    background-color: aquamarine;
+}
+
+.absolute-cm {
+    width: 2.54cm;
+    background-color: blue;
+}
+
+.absolute-mm {
+    width: 25.4mm;
+    background-color: blueviolet;
+}
+
+.absolute-in {
+    width: 1in;
+    background-color: brown;
+}
+
+.absolute-pt {
+    width: 72pt;
+    background-color: cadetblue;
+}
+
+.absolute-pc {
+    width: 6pc;
+    background-color: burlywood;
+}
+
+/* Relative Units */
+.relative-percent {
+    width: 50%;
+    background-color: chartreuse;
+}
+
+.relative-em {
+    width: 5em;
+    background-color: chocolate;
+}
+
+.relative-rem {
+    width: 10rem;
+    background-color: cornflowerblue;
+}
+
+/* Viewport Units */
+.viewport-vw {
+    width: 20vw;
+    background-color: crimson;
+}
+
+.viewport-vh {
+    width: 10vh;
+    background-color: cyan;
+}
+
+.viewport-vmin {
+    width: 15vmin;
+    background-color: darkblue;
+}
+
+.viewport-vmax {
+    width: 15vmax;
+    background-color: darkcyan;
+}
+
+.relative-ch {
+    width: 60ch;
+    background-color: darkgoldenrod;
+}
+
+.relative-ex {
+    width: 80ex;
+    background-color: darkgreen;
+}

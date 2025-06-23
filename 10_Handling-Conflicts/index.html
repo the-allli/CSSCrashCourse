@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handling Conflicts</title>
+    <link rel="stylesheet" href="cascade.css" />
+    <link rel="stylesheet" href="specificity.css" />
+    <link rel="stylesheet" href="inheritance.css" />
+  </head>
+  <body>
+    <h2>
+      The aim of this lesson is to develop your understanding of some of the
+      most fundamental concepts of CSS — the cascade, specificity, and
+      inheritance — which control how CSS is applied to HTML and how conflicts
+      between style declarations are resolved.
+    </h2>
+    <div class="specificity">
+      <h3>Cascade</h3>
+      <p>
+        At a very simple level, this means that the origin and the order of CSS
+        rules matter. When two rules both have equal specificity, the one that
+        is defined last in the stylesheet is the one that will be used.
+      </p>
+      <code>h5 { color: red; } h5 { color: blue; }</code>
+      <h5>This is my heading.</h5>
+    </div>
+    <div>
+      <h3>Specificity</h3>
+      <p>
+        Specificity is an algorithm that the browser uses to decide which
+        property value is applied to an element. If multiple rules have
+        different selectors that set different values for the same property and
+        target the same element, specificity decides the property value that
+        gets applied to the element. Specificity is basically a measure of how
+        specific a selector's selection will be:
+      </p>
+      <ul>
+        <li>
+          An type (element) selector is less specific; it will select all
+          elements of that type that appear on a page, so it has less weight.
+          Pseudo-element selectors have the same specificity as regular element
+          selectors.
+        </li>
+        <li>
+          A class selector is more specific; it will select only the elements on
+          a page that have a specific class attribute value, so it has more
+          weight. Attribute selectors and pseudo-classes have the same weight as
+          a class.
+        </li>
+        <li>
+          An ID selector is even more specific — it only selects a single
+          element with a specific id value. It therefore has even more weight.
+        </li>
+      </ul>
+      <code
+        >#specificity { color: green; } .main-heading { color: red; } h5 {
+        color: blue; }</code
+      >
+      <h5 class="main-heading" id="specificity">This is my heading.</h5>
+    </div>
+    <h3>Inheritance</h3>
+    <div>
+      <p>
+        Inheritance also needs to be understood in this context — some CSS
+        property values set on parent elements are inherited by their child
+        elements, and some aren't. For example, if you set a color and
+        font-family on an element, every element inside it will also be styled
+        with that color and font, unless you've applied different color and font
+        values directly to them.
+      </p>
+      <code>.inheritance { color: blue; } span { color: black; }</code>
+      <div class="inheritance">
+        <h5>
+          As the body has been set to have a color of blue this is inherited
+          through the descendants. We can change the color by specifically
+          targeting an element with a different style, such as this
+          <span>span</span>.
+        </h5>
+      </div>
+      <h4>Controlling inheritance</h4>
+      <div>
+        <dl>
+          <dt>inherit</dt>
+          <dd>
+            Sets the property value applied to a selected element to be the same
+            as that of its parent element. Effectively, this turns on
+            inheritance.
+          </dd>
+          <dt>initial</dt>
+          <dd>
+            Sets the property value applied to a selected element to the initial
+            value of that property.
+          </dd>
+          <dt>revert</dt>
+          <dd>
+            Resets the property value applied to a selected element to the
+            browser's default styling rather than the defaults applied to that
+            property. This value acts like unset in many cases.
+          </dd>
+          <dt>unset</dt>
+          <dd>
+            Resets the property to its natural value, which means that if the
+            property is naturally inherited it acts like inherit, otherwise it
+            acts like initial.
+          </dd>
+        </dl>
+      </div>
+      <code
+        >.controlling-inheritance { color: green; } .my-class-1 a { color:
+        inherit; } .my-class-2 a { color: initial; } .my-class-3 a { color:
+        revert; } .my-class-4 a { color: unset; }</code
+      >
+      <div class="controlling-inheritance">
+        <ul>
+          <li>Default <a href="#">link</a> color</li>
+          <li class="my-class-1">Inherit <a href="#">link</a> color</li>
+          <li class="my-class-2">Initial <a href="#">link</a> color</li>
+          <li class="my-class-3">Revert <a href="#">link</a> color</li>
+          <li class="my-class-4">Unset <a href="#">link</a> color</li>
+        </ul>
+      </div>
+      <div class="inline">
+        <h4 style="color: brown">Inline styles</h4>
+        <p style="color: black">
+          Inline styles, that is, the style declaration inside a style
+          attribute, take precedence over all normal styles, no matter the
+          specificity. Such declarations don't have selectors, but their
+          specificity can be construed as 1-0-0-0; always more than any other
+          specificity weight no matter how many IDs are in the selectors
+        </p>
+      </div>
+      <div>
+        <h4>!important</h4>
+        <p>
+          There is a special piece of CSS that you can use to overrule all of
+          the above calculations, even inline styles - the !important flag.
+          However, you should be very careful when using it. This flag is used
+          to make an individual property and value pair the most specific rule,
+          thereby overriding the normal rules of the cascade, including normal
+          inline styles.
+        </p>
+        <h5 class="better" id="winning">One selector to rule them all!</h5>
+      </div>
+    </div>
+  </body>
+</html>
