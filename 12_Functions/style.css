@@ -1,0 +1,6 @@
+/* The abs() CSS function returns the absolute value of the argument, as the same type as the input. */
+
+/* property: abs(expression) */
+h1 {
+  width: abs(20% - 100px);
+}
